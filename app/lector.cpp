@@ -3,10 +3,24 @@
 #include <fstream>
 #define NOMBRE_ARCHIVO "pruebas.csv"
 using namespace std;
+fstream MyFile;
 
 int main()
 {
-    ifstream archivo(NOMBRE_ARCHIVO);
+    
+    fstream ReadFile("data.csv",ios::in);
+
+    if (!ReadFile)
+    {
+        cout<<"Creando archivo...." << endl;
+        fstream CreateFile("data.csv",ios::out);
+        CreateFile<<"Identificador de estudiante;Preguntas correctas;Preguntas incorrectas;Preguntas omitidas;Puntaje;Nota"<<endl;
+    }
+    
+    MyFile.open("data.csv",ios::app);
+
+    ifstream archivo(NOMBRE_ARCHIVO); 
+
     string linea;
     char delimitador = ';';
     //RESPUESTAS ORDENADAS (RESPUESTA P 1  = respuestas[0])
@@ -86,8 +100,10 @@ int main()
         cout << "Puntaje: " << puntaje << endl;
         cout << "Nota: " << nota << endl;
 
+        MyFile<<id+";"<<buenas<<";"<<malas<<";"<<omitidas<<";"<<puntaje<<";"<<nota<<endl;
+
 
     }
-
+    MyFile.close();
     archivo.close();
 }
