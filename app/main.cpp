@@ -17,6 +17,10 @@ int main()
     if (!ReadFile)
     {
         cout<<"Creando archivo...." << endl;
+        cout<<"Integrantes del grupo" << endl;
+        cout<<"Claudio Silva" << endl;
+        cout<<"Carlos Loyola" << endl;
+        cout<<"Jose Calfuen" << endl;
         fstream CreateFile("resultado.csv",ios::out);
         CreateFile<<"Identificador de estudiante;Preguntas correctas;Preguntas incorrectas;Preguntas omitidas;Puntaje;Nota"<<endl;
     }
@@ -90,4 +94,5 @@ int main()
     }
     MyFile.close();
     archivo.close();
+    cout<<"Archivo Creado :D" << endl;
 }
