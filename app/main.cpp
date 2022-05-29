@@ -3,6 +3,7 @@
 #include <fstream>
 #include <omp.h>
 #define NOMBRE_ARCHIVO "pruebas.csv"
+#define NOMBRE_ARCHIVO_OUT "resultado.csv"
 using namespace std;
 fstream MyFile;
 
@@ -12,7 +13,7 @@ int main()
     string linea;
     const string quote ="\""; //comillas dobles para agregar al archivo de salida
 
-    fstream ReadFile("data.csv",ios::in);
+    fstream ReadFile(NOMBRE_ARCHIVO_OUT,ios::in);
 
     if (!ReadFile)
     {
@@ -21,11 +22,11 @@ int main()
         cout<<"Claudio Silva" << endl;
         cout<<"Carlos Loyola" << endl;
         cout<<"Jose Calfuen" << endl;
-        fstream CreateFile("resultado.csv",ios::out);
+        fstream CreateFile(NOMBRE_ARCHIVO_OUT,ios::out);
         CreateFile<<"Identificador de estudiante;Preguntas correctas;Preguntas incorrectas;Preguntas omitidas;Puntaje;Nota"<<endl;
     }
     
-    MyFile.open("data.csv",ios::app);
+    MyFile.open(NOMBRE_ARCHIVO_OUT,ios::app);
     char delimitador = ';';
     //RESPUESTAS ORDENADAS (RESPUESTA P1  = respuestas[0])
     char respuestas[12] = {'A','E','C','B','B','D','A','B','E','C','B','D'};
