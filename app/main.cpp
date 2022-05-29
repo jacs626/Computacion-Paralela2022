@@ -31,7 +31,7 @@ int main()
    // while (getline(archivo, linea)) descomentar esta y comentar el for para el uso de todo el archivo
     for (size_t i = 0; i < 1; i++) //archivo limitado a las primeras 20 filas
     {
-        //contador de respuestas buenas
+        //Contador de respuestas buenas
         
         float buenas=0,omitidas=0,malas,puntaje,nota;
         getline(archivo, linea);// comentar cuando se quiera usar el archivo completo
@@ -95,7 +95,7 @@ int main()
         cout << "Pregunta 11: " << Pregunta11[1] << endl;
         cout << "Pregunta 12: " << Pregunta12[1] << endl;
         cout << "Buenas: " << buenas << endl;
-        cout << "Malas: " << malas << endl;
+        cout << "Malas: " << Malas << endl;
         cout << "Omitidas: " << omitidas << endl;
         cout << "Puntaje: " << puntaje << endl;
         cout << "Nota: " << nota << endl;
