@@ -17,7 +17,7 @@ int main()
     if (!ReadFile)
     {
         cout<<"Creando archivo...." << endl;
-        fstream CreateFile("data.csv",ios::out);
+        fstream CreateFile("resultado.csv",ios::out);
         CreateFile<<"Identificador de estudiante;Preguntas correctas;Preguntas incorrectas;Preguntas omitidas;Puntaje;Nota"<<endl;
     }
     
